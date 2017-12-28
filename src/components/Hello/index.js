@@ -9,6 +9,8 @@ import {
     get_category,
     get_hero_list
 }from '../../utils/request';
+
+import {uploader_init} from '../../common/uploader';
 /**
  * 测试用
  */
@@ -113,6 +115,8 @@ class Hello extends React.PureComponent {
 
         var thiz = this;
 
+    uploader_init({id:'new_hero'});
+
       try {
           get_category((data)=>{
 
@@ -143,6 +147,8 @@ class Hello extends React.PureComponent {
     return <div>
 
       <h1 className="testStyle">Hello, React!</h1>
+
+      <button id="new_hero">新增英雄</button>
 
       <Tabs defaultActiveKey='0' onChange={this.callback.bind(this)}>
 
